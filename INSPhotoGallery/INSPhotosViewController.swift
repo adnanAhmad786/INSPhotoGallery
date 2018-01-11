@@ -191,6 +191,16 @@ open class INSPhotosViewController: UIViewController, UIPageViewControllerDataSo
         pageViewController.didMove(toParentViewController: self)
         
         setupOverlayView()
+        
+        UIApplication.shared.isStatusBarHidden = true
+
+    }
+    
+    
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.isStatusBarHidden = false
     }
     
     open override func viewDidAppear(_ animated: Bool) {
